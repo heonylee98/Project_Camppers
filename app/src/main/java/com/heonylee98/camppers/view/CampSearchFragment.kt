@@ -24,7 +24,15 @@ class CampSearchFragment : Fragment() {
     ): View? {
         fragmentCampSearchBinding = FragmentCampSearchBinding.inflate(layoutInflater)
         mainActivity = activity as MainActivity
-        getCampData()
+
+        // getCampData()
+
+        // 필터 태그를 통해 분류된 데이터를 받아와 지도에 핀 표시
+        // 도 단위 지역을 고르기 전까진 데이터 로딩 X
+        // 핀을 클릭하면 bottom sheet를 통해 해당 시설 정보 띄우기
+
+        // bottom sheet 에서 가상의 캠핑장 주인과 1:1대화를 바로 연결하는 버튼 1
+        // bottom sheet 에서 가상의 캠핑장 예약 기능을 바로 연결하는 버튼 2
 
         return fragmentCampSearchBinding.root
     }
