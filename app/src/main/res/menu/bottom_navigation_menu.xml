@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/campSearchFragment"
+        android:icon="@drawable/camp_search_icon_24px"
+        android:title="@string/item_camp_search"
+        />
+    <item
+        android:id="@+id/userChatFragment"
+        android:icon="@drawable/user_chat_icon_24px"
+        android:title="@string/item_user_chat"
+        />
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_icon_24px"
+        android:title="@string/item_home"
+        />
+    <item
+        android:id="@+id/communityFragment"
+        android:icon="@drawable/community_icon_24px"
+        android:title="@string/item_community"
+        />
+    <item
+        android:id="@+id/mypageFragment"
+        android:icon="@drawable/mypage_icon_24px"
+        android:title="@string/item_mypage"
+        />
+
+</menu>

@@ -2,4 +2,12 @@
     <string name="app_name">Camppers</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- bottom navigation icon name -->
+    <string name="item_camp_search">캠핑장</string>
+    <string name="item_user_chat">메세지</string>
+    <string name="item_home">홈</string>
+    <string name="item_community">커뮤니티</string>
+    <string name="item_mypage">마이페이지</string>
+
 </resources>

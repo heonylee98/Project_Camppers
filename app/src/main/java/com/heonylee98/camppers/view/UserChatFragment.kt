@@ -1,4 +1,4 @@
-package com.heonylee98.camppers.ui
+package com.heonylee98.camppers.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.heonylee98.camppers.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/campSearchFragment"
+        android:name="com.heonylee98.camppers.view.CampSearchFragment"
+        android:label="fragment_camp_search"
+        tools:layout="@layout/fragment_camp_search" />
+    <fragment
+        android:id="@+id/communityFragment"
+        android:name="com.heonylee98.camppers.view.CommunityFragment"
+        android:label="fragment_community"
+        tools:layout="@layout/fragment_community" />
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.heonylee98.camppers.view.MypageFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage" />
+    <fragment
+        android:id="@+id/userChatFragment"
+        android:name="com.heonylee98.camppers.view.UserChatFragment"
+        android:label="fragment_user_chat"
+        tools:layout="@layout/fragment_user_chat" />
+</navigation>
