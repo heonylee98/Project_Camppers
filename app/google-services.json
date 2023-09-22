@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "462374145043",
+    "project_id": "camppers-ad8ec",
+    "storage_bucket": "camppers-ad8ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462374145043:android:1107f9037590bd3bcd83e6",
+        "android_client_info": {
+          "package_name": "com.heonylee98.camppers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvSTL7lN89CCaRi0pmR-ebzVz9nwRk5EQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
