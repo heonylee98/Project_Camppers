@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgRowUserChat"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textRowNickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="캠핑 대마왕"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textRowLastTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="마지막 메세지 시간"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+            <TextView
+                android:id="@+id/textRowLastMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text=" 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

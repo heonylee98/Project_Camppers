@@ -5,14 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.heonylee98.camppers.R
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.heonylee98.camppers.adapter.UserChatAdapter
+import com.heonylee98.camppers.databinding.FragmentUserChatBinding
+import com.heonylee98.camppers.databinding.UserChatRecyclerRowBinding
 
 class UserChatFragment : Fragment() {
+    lateinit var fragmentUserChatBinding: FragmentUserChatBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_chat, container, false)
+        fragmentUserChatBinding = FragmentUserChatBinding.inflate(layoutInflater)
+        fragmentUserChatBinding.run {
+            recyclerUserChat.run {
+                adapter = UserChatAdapter()
+                layoutManager = LinearLayoutManager(context)
+            }
+        }
+
+        return fragmentUserChatBinding.root
     }
 }

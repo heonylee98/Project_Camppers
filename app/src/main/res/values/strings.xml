@@ -17,4 +17,8 @@
     <string name="tb_community">커뮤니티</string>
     <string name="tb_mypage">마이페이지</string>
 
+    <!-- button text -->
+    <string name="btn_select">선택하기</string>
+    <string name="btn_delete">선택삭제</string>
+
 </resources>
