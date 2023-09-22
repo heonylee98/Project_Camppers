@@ -38,7 +38,15 @@ class CampSearchFragment : Fragment() {
 
         val allContents = reader.readAll()
         for (i in allContents) {
-            Log.d("!!", i.toList().toString())
+            Log.d("!!", i.get(0).toString())
+
+            // 필수 항목 열 번호
+            // 3,4,14,16,17,19~28,32~36,38,40,41,45,46
+
+            // 글램핑 필요 열 번호
+            // 47~54
         }
+
+
     }
 }
