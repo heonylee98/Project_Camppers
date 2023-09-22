@@ -53,4 +53,7 @@ dependencies {
     // csv reader
     implementation ("com.opencsv:opencsv:5.8")
 
+    // card view
+    implementation ("androidx.cardview:cardview:1.0.0")
+
 }

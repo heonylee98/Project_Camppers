@@ -51,7 +51,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_marginRight="8dp"
                     android:text="마지막 메세지 시간"
+                    android:drawableEnd="@drawable/text_arrow_icon_24px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -66,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:text=" 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자 마지막 문자"
+                android:text="마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자마지막문자"
                 android:textSize="16sp" />
         </LinearLayout>
 

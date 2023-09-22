@@ -15,4 +15,251 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mypageText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:textSize="16sp"
+                android:text="@string/text_my_information" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageMypage"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textMypageNickname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TextView"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:id="@+id/divider12"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <TextView
+                                android:id="@+id/textMypageTag"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="fill"
+                                android:text="TextView" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/mypageDivider1"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mypageText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:textSize="16sp"
+                android:text="@string/text_my_camping" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnMypageReservationCamping"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_reservation"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageCancelCamping"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_reservation_canceled"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageFinishCamping"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_reservation_finished"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mypageDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mypageText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/text_my_post"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnMypagePost"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_post"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageReply"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_reply"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageFavorite"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_my_favorite"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mypageDivider3"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mypageText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:textSize="16sp"
+                android:text="@string/text_user_settings" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnMypageModify"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_user_modify"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageLogout"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_logout"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+                <View
+                    android:id="@+id/mypageDivider10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+                <Button
+                    android:id="@+id/btnMypageDeleteUser"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/btn_user_delete"
+                    app:icon="@drawable/double_arrow_icon_24px" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/mypageDivider4"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:background="?android:attr/listDivider" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

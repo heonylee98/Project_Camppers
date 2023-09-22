@@ -21,4 +21,23 @@
     <string name="btn_select">선택하기</string>
     <string name="btn_delete">선택삭제</string>
 
+    <string name="btn_user_modify">회원정보수정</string>
+    <string name="btn_logout">로그아웃</string>
+    <string name="btn_user_delete">회원탈퇴</string>
+
+    <string name="btn_my_post">업로드한 게시물</string>
+    <string name="btn_my_reply">작성한 댓글</string>
+    <string name="btn_my_favorite">별표한 게시물</string>
+
+    <string name="btn_my_reservation">예약한 캠핑장</string>
+    <string name="btn_my_reservation_canceled">취소한 캠핑장</string>
+    <string name="btn_my_reservation_finished">방문했던 캠핑장</string>
+
+    <!-- text strings -->
+    <string name="text_my_information">내 정보</string>
+    <string name="text_my_camping">캠핑장 이용내역</string>
+    <string name="text_user_settings">회원 관리</string>
+    <string name="text_my_post">게시물 관리</string>
+
+
 </resources>
