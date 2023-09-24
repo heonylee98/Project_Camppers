@@ -29,7 +29,7 @@
                 android:id="@+id/mypageText1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="8dp"
                 android:textSize="16sp"
                 android:text="@string/text_my_information" />
 
@@ -95,7 +95,7 @@
                 android:id="@+id/mypageText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="8dp"
                 android:textSize="16sp"
                 android:text="@string/text_my_camping" />
 
@@ -110,6 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_reservation"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -123,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_reservation_canceled"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -136,6 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_reservation_finished"
                     app:icon="@drawable/double_arrow_icon_24px" />
 
@@ -151,7 +154,7 @@
                 android:id="@+id/mypageText3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="8dp"
                 android:text="@string/text_my_post"
                 android:textSize="16sp" />
 
@@ -166,6 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_post"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -179,6 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_reply"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -192,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_my_favorite"
                     app:icon="@drawable/double_arrow_icon_24px" />
 
@@ -207,7 +213,7 @@
                 android:id="@+id/mypageText4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="8dp"
                 android:textSize="16sp"
                 android:text="@string/text_user_settings" />
 
@@ -222,6 +228,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_user_modify"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -235,6 +242,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_logout"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View
@@ -248,6 +256,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
+                    app:rippleColor="@color/white"
                     android:text="@string/btn_user_delete"
                     app:icon="@drawable/double_arrow_icon_24px" />
 

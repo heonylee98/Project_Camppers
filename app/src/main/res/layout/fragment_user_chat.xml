@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="@string/btn_select"
-            app:rippleColor="#FFFFFF" />
+            app:rippleColor="@color/white" />
 
         <View
             android:id="@+id/View"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="@string/btn_delete"
-            app:rippleColor="#FFFFFF" />
+            app:rippleColor="@color/white" />
 
     </LinearLayout>
 

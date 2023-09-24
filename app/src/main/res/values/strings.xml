@@ -11,6 +11,7 @@
     <string name="item_mypage">마이페이지</string>
 
     <!-- toolbar name -->
+    <string name="tb_user_login">로그인</string>
     <string name="tb_camp_search">캠핑장 찾기</string>
     <string name="tb_user_chat">채팅</string>
     <string name="tb_home">홈</string>
@@ -39,5 +40,7 @@
     <string name="text_user_settings">회원 관리</string>
     <string name="text_my_post">게시물 관리</string>
 
+    <!-- client id -->
+    <string name="client_id">462374145043-n9i77b3t1pteqk36hb8qgh4vscp529de.apps.googleusercontent.com</string>
 
 </resources>

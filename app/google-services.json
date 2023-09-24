@@ -12,7 +12,20 @@
           "package_name": "com.heonylee98.camppers"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "462374145043-65n0dcpbfsvkktgi59v2rfn54tft0plr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.heonylee98.camppers",
+            "certificate_hash": "f4317906a42a55d64232e94c7f491f649fad3e2f"
+          }
+        },
+        {
+          "client_id": "462374145043-n9i77b3t1pteqk36hb8qgh4vscp529de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBvSTL7lN89CCaRi0pmR-ebzVz9nwRk5EQ"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462374145043-n9i77b3t1pteqk36hb8qgh4vscp529de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
