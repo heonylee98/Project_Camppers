@@ -242,7 +242,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
-                    app:rippleColor="@color/white"
+                    app:rippleColor="@null"
                     android:text="@string/btn_logout"
                     app:icon="@drawable/double_arrow_icon_24px" />
                 <View

@@ -65,5 +65,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     // google login auth
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    // google maps
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
 
 }
