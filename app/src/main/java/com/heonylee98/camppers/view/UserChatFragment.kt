@@ -20,13 +20,17 @@ class UserChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         fragmentUserChatBinding = FragmentUserChatBinding.inflate(layoutInflater)
+
+        return fragmentUserChatBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         fragmentUserChatBinding.run {
             recyclerUserChat.run {
                 adapter = UserChatAdapter()
                 layoutManager = LinearLayoutManager(context)
             }
         }
-
-        return fragmentUserChatBinding.root
     }
 }

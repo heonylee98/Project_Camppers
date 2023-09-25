@@ -63,6 +63,7 @@ dependencies {
 
     // firebase auth
     implementation("com.google.firebase:firebase-auth-ktx")
+    // google login auth
     implementation("com.google.android.gms:play-services-auth:20.7.0")
 
 }

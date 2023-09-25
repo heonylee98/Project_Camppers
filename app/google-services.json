@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "462374145043-65n0dcpbfsvkktgi59v2rfn54tft0plr.apps.googleusercontent.com",
+          "client_id": "462374145043-tlan1ufat3p0l2e0poce3itp81v0vp2n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.heonylee98.camppers",
-            "certificate_hash": "f4317906a42a55d64232e94c7f491f649fad3e2f"
+            "certificate_hash": "7a38482978e7dcf5c56af0efb8c154fe5c90756c"
           }
         },
         {
