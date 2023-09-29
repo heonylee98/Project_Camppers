@@ -17,6 +17,7 @@
     <string name="tb_home">홈</string>
     <string name="tb_community">커뮤니티</string>
     <string name="tb_mypage">마이페이지</string>
+    <string name="tb_community_add">캠핑라이프 작성</string>
 
     <!-- button text -->
     <string name="btn_select">선택하기</string>
@@ -35,6 +36,7 @@
     <string name="btn_my_reservation_finished">방문했던 캠핑장</string>
 
     <string name="btn_community_write">캠핑Life 작성</string>
+    <string name="btn_add_complete">작성 완료</string>
 
     <!-- text strings -->
     <string name="text_my_information">내 정보</string>
