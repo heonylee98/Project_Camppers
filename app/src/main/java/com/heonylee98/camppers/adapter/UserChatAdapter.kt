@@ -25,6 +25,7 @@ class UserChatAdapter: RecyclerView.Adapter<UserChatAdapter.UserChatViewHolder>(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserChatViewHolder {
         val userChatRecyclerRowBinding =
             UserChatRecyclerRowBinding.inflate(LayoutInflater.from(parent.context))
+
         userChatRecyclerRowBinding.root.layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
