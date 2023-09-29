@@ -15,6 +15,7 @@ class CommunityAdapter: RecyclerView.Adapter<CommunityAdapter.CommunityHolder>()
         var postUploadDate: TextView
         var postImage: ImageView
         var postText: TextView
+        var postLikeCount: TextView
 
         var likeButton: Button
         var commentButton: Button
@@ -26,6 +27,7 @@ class CommunityAdapter: RecyclerView.Adapter<CommunityAdapter.CommunityHolder>()
             postUploadDate = communityRecyclerRowBinding.recyclerPostedDate
             postImage = communityRecyclerRowBinding.recyclerPostImage
             postText = communityRecyclerRowBinding.recyclerPostText
+            postLikeCount = communityRecyclerRowBinding.recyclerLikeCount
 
             likeButton = communityRecyclerRowBinding.recyclerLike
             commentButton = communityRecyclerRowBinding.recyclerComment
@@ -49,6 +51,6 @@ class CommunityAdapter: RecyclerView.Adapter<CommunityAdapter.CommunityHolder>()
         return 10
     }
     override fun onBindViewHolder(holder: CommunityHolder, position: Int) {
-        holder.postUploadDate.text = "$position"
+        holder.postLikeCount.text = "좋아요: ${position}개"
     }
 }

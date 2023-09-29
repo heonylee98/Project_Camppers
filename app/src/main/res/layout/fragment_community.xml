@@ -24,7 +24,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCommunity"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:padding="4dp" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
