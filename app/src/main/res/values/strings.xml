@@ -34,6 +34,8 @@
     <string name="btn_my_reservation_canceled">취소한 캠핑장</string>
     <string name="btn_my_reservation_finished">방문했던 캠핑장</string>
 
+    <string name="btn_community_write">캠핑Life 작성</string>
+
     <!-- text strings -->
     <string name="text_my_information">내 정보</string>
     <string name="text_my_camping">캠핑장 이용내역</string>
