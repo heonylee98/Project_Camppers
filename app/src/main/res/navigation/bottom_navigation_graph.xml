@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation_graph.xml"
-    app:startDestination="@id/communityAddFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -29,12 +29,11 @@
         android:id="@+id/userChatFragment"
         android:name="com.heonylee98.camppers.view.UserChatFragment"
         android:label="fragment_user_chat"
-        tools:layout="@layout/fragment_user_chat" />
-    <fragment
-        android:id="@+id/userLoginFragment"
-        android:name="com.heonylee98.camppers.view.UserLoginFragment"
-        android:label="fragment_user_login"
-        tools:layout="@layout/fragment_user_login" />
+        tools:layout="@layout/fragment_user_chat" >
+        <action
+            android:id="@+id/action_userChatFragment_to_communityAddFragment"
+            app:destination="@id/communityAddFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communityAddFragment"
         android:name="com.heonylee98.camppers.view.CommunityAddFragment"

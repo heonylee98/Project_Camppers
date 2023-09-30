@@ -13,6 +13,8 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -40,6 +42,7 @@ class UserLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         fragmentUserLoginBinding = FragmentUserLoginBinding.inflate(layoutInflater)
+
         userStateMethodWithGoogle()
 
         return fragmentUserLoginBinding.root
@@ -91,6 +94,8 @@ class UserLoginFragment : Fragment() {
             startGoogleLoginForResult.launch(signInIntent)
         }
     }
+
+    // homeFragment에서 updateUi메서드 작동하게 이전
     private fun updateUI(user: FirebaseUser?) {
         // uid와 일치하는 닉네임 정보 firestore db에서 받아서 보여주는 메서드 필요
         Snackbar.make(requireView(), "${user?.uid}님 환영합니다.", Snackbar.LENGTH_SHORT).show()
