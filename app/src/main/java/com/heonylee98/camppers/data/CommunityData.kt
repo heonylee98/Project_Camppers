@@ -7,4 +7,4 @@ data class CommunityData(val postUploadId: String,
                          val postUploadText: String,
                          val postUploadLike: Boolean,
                          val postUploadLikeCount: Long,
-                         val postUploadComment: CommunityComment?)
+                         val postUploadComment: Long)

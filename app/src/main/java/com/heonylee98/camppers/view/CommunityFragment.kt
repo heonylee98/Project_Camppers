@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.heonylee98.camppers.R
 import com.heonylee98.camppers.adapter.CommunityAdapter
 import com.heonylee98.camppers.databinding.FragmentCommunityBinding
+import com.heonylee98.camppers.model.CommunityModel
 
 class CommunityFragment : Fragment() {
     lateinit var fragmentCommunityBinding: FragmentCommunityBinding
@@ -23,6 +24,7 @@ class CommunityFragment : Fragment() {
     ): View? {
         fragmentCommunityBinding = FragmentCommunityBinding.inflate(layoutInflater)
         navController = findNavController()
+        CommunityModel.communityGetPost()
 
         fragmentCommunityBinding.run {
             buttonCommunityUpload.setOnClickListener {

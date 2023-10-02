@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.heonylee98.camppers.databinding.CommunityRecyclerRowBinding
+import com.heonylee98.camppers.model.CommunityModel
 
 class CommunityAdapter: RecyclerView.Adapter<CommunityAdapter.CommunityHolder>() {
     inner class CommunityHolder(communityRecyclerRowBinding: CommunityRecyclerRowBinding): RecyclerView.ViewHolder(communityRecyclerRowBinding.root) {
