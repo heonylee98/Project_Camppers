@@ -33,7 +33,7 @@ class CommunityAddFragment : Fragment() {
 
     // post upload용 메서드
     private fun addPost() {
-        val uploadId = "test_post_id"
+        val uploadId = ""
         val uploadUserId = "test_user_id"
         val uploadTime = getPostTime()
         val uploadImage = "test_image"

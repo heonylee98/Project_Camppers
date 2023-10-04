@@ -1,11 +1,13 @@
 package com.heonylee98.camppers.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
@@ -39,13 +41,13 @@ class CommunityFragment : Fragment() {
             communityList.observe(mainActivity) {
                 fragmentCommunityBinding.recyclerCommunity.adapter?.notifyDataSetChanged()
             }
+            getCommunityData()
         }
 
         fragmentCommunityBinding.run {
             buttonCommunityUpload.setOnClickListener {
                 navController.navigate(R.id.communityAddFragment)
             }
-            communityViewModel.getCommunityData()
         }
 
         return fragmentCommunityBinding.root
@@ -70,7 +72,7 @@ class CommunityFragment : Fragment() {
             var postText: TextView
             var postLikeCount: TextView
 
-            var likeButton: Button
+            var likeButton: CheckBox
             var commentButton: Button
             var shareButton: Button
 
@@ -83,6 +85,10 @@ class CommunityFragment : Fragment() {
                 postLikeCount = communityRecyclerRowBinding.recyclerLikeCount
 
                 likeButton = communityRecyclerRowBinding.recyclerLike
+                likeButton.setOnCheckedChangeListener { compoundButton, b ->
+                    communityViewModel.likeButtonCount(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
+                    Log.d("!!","${communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!}")
+                }
                 commentButton = communityRecyclerRowBinding.recyclerComment
                 shareButton = communityRecyclerRowBinding.recyclerShare
             }
@@ -104,7 +110,9 @@ class CommunityFragment : Fragment() {
             return communityViewModel.communityList.value?.size!!
         }
         override fun onBindViewHolder(holder: CommunityHolder, position: Int) {
+            holder.postUploadDate.text = communityViewModel.communityList.value?.get(position)?.postUploadTime
             holder.postText.text = communityViewModel.communityList.value?.get(position)?.postUploadText
+            holder.postLikeCount.text = "좋아요 ${communityViewModel.communityList.value?.get(position)?.postUploadLikeCount}개"
         }
     }
 }
