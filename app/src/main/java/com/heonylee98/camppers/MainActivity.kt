@@ -15,9 +15,11 @@ class MainActivity : AppCompatActivity() {
         Manifest.permission.ACCESS_BACKGROUND_LOCATION,
         Manifest.permission.INTERNET
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+
         requestPermissions(permissionList, 0)
         navigationInit()
 
