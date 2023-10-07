@@ -3,12 +3,16 @@ package com.heonylee98.camppers
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.heonylee98.camppers.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
+
     val permissionList = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.ACCESS_MEDIA_LOCATION,
@@ -21,17 +25,17 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
         requestPermissions(permissionList, 0)
-        navigationInit()
+        // navigationInit()
 
         setContentView(activityMainBinding.root)
     }
 
-    private fun navigationInit() {
+    /*private fun navigationInit() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcvMain) as NavHostFragment
         val navController = navHostFragment.navController
 
         activityMainBinding.bottomNavigationMain.run {
             setupWithNavController(navController)
         }
-    }
+    }*/
 }

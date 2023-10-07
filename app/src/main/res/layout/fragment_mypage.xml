@@ -53,6 +53,7 @@
                             android:id="@+id/imageMypage"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_marginRight="8dp"
                             android:adjustViewBounds="true"
                             app:srcCompat="@drawable/ic_launcher_foreground" />
 

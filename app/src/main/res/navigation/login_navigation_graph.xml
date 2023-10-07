@@ -8,5 +8,14 @@
         android:id="@+id/userLoginFragment"
         android:name="com.heonylee98.camppers.view.UserLoginFragment"
         android:label="fragment_user_login"
-        tools:layout="@layout/fragment_user_login" />
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLoginFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.heonylee98.camppers.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

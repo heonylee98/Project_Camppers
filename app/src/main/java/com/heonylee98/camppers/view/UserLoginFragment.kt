@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -32,6 +33,7 @@ import com.heonylee98.camppers.databinding.FragmentUserLoginBinding
 
 class UserLoginFragment : Fragment() {
     lateinit var fragmentUserLoginBinding: FragmentUserLoginBinding
+    lateinit var navController: NavController
 
     private lateinit var auth: FirebaseAuth
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -42,17 +44,11 @@ class UserLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         fragmentUserLoginBinding = FragmentUserLoginBinding.inflate(layoutInflater)
-
+        navController = findNavController()
         userStateMethodWithGoogle()
 
         return fragmentUserLoginBinding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        googleLoginButtonPressed()
-    }
-
     private fun userStateMethodWithGoogle() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.client_id))
@@ -88,16 +84,21 @@ class UserLoginFragment : Fragment() {
                 }
             }
     }
+    // homeFragment에서 updateUi메서드 작동하게 이전
+    private fun updateUI(user: FirebaseUser?) {
+        // uid와 일치하는 닉네임 정보 firestore db에서 받아서 보여주는 메서드 필요
+        Snackbar.make(requireView(), "${user?.displayName}님 환영합니다.", Snackbar.LENGTH_SHORT).show()
+        navController.navigate(R.id.action_userLoginFragment_to_mainFragment2)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        googleLoginButtonPressed()
+    }
     private fun googleLoginButtonPressed() {
         fragmentUserLoginBinding.googleLoginButton.setOnClickListener {
             val signInIntent = mGoogleSignInClient.signInIntent
             startGoogleLoginForResult.launch(signInIntent)
         }
-    }
-
-    // homeFragment에서 updateUi메서드 작동하게 이전
-    private fun updateUI(user: FirebaseUser?) {
-        // uid와 일치하는 닉네임 정보 firestore db에서 받아서 보여주는 메서드 필요
-        Snackbar.make(requireView(), "${user?.uid}님 환영합니다.", Snackbar.LENGTH_SHORT).show()
     }
 }
