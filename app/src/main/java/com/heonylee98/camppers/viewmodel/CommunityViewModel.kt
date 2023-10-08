@@ -33,7 +33,7 @@ class CommunityViewModel: ViewModel() {
 
                 dataList.add(communityGetPostData)
             }
-
+            dataList.reverse()
             communityList.value = dataList
         }
     }
@@ -59,7 +59,7 @@ class CommunityViewModel: ViewModel() {
 
                     dataList.add(communityGetPostData)
                 }
-
+                dataList.reverse()
                 communityList.value = dataList
             }
         }

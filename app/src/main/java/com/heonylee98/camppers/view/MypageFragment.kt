@@ -68,6 +68,7 @@ class MypageFragment : Fragment() {
             Glide.with(this@MypageFragment)
                 .load(user?.photoUrl)
                 .into(imageMypage)
+            textMypageEmail.text = user?.email
         }
     }
 

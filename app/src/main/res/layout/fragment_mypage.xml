@@ -70,17 +70,21 @@
                                 android:text="TextView"
                                 android:textSize="16sp" />
 
+                            <TextView
+                                android:id="@+id/textMypageEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TextView" />
+
                             <View
                                 android:id="@+id/divider12"
                                 android:layout_width="match_parent"
                                 android:layout_height="4dp" />
 
                             <TextView
-                                android:id="@+id/textMypageTag"
+                                android:id="@+id/textMypageArea"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="fill"
-                                android:text="TextView" />
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
 
                     </LinearLayout>
