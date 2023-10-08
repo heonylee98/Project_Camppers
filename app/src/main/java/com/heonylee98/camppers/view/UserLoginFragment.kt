@@ -29,7 +29,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.heonylee98.camppers.MainActivity
 import com.heonylee98.camppers.R
+import com.heonylee98.camppers.data.UserData
 import com.heonylee98.camppers.databinding.FragmentUserLoginBinding
+import com.heonylee98.camppers.model.UserModel
+import kotlin.concurrent.thread
 
 class UserLoginFragment : Fragment() {
     lateinit var fragmentUserLoginBinding: FragmentUserLoginBinding
@@ -78,11 +81,51 @@ class UserLoginFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    updateUI(user)
+                    userCheck(user)
                 } else {
                     updateUI(null)
                 }
             }
+    }
+
+    // user 정보가 기존에 등록되어있는지 확인하고 추가하는 메서드
+    private fun userCheck(user: FirebaseUser?) {
+        UserModel.foundUser(user?.uid) {
+            // 해당 document가 존재할 때
+            if (it.result.documents.size != 0) {
+                for (i in it.result.documents) {
+                    if (user?.uid == i.data?.get("userUid").toString()) {
+                        updateUI(user)
+                    } else {
+                        thread {
+                            val userUid = user?.uid as String
+                            val userName = user?.displayName as String
+                            val userEmail = user?.email as String
+                            val userImage = user?.photoUrl
+                            val userArea = null
+
+                            val userData = UserData(userUid, userName, userEmail, userImage, userArea)
+                            UserModel.userUpload(userData)
+                        }
+
+                        updateUI(user)
+                    }
+                }
+            }
+            // 해당 document가 존재하지 않을 때
+            else {
+                val userUid = user?.uid as String
+                val userName = user?.displayName as String
+                val userEmail = user?.email as String
+                val userImage = user?.photoUrl
+                val userArea = null
+
+                val userData = UserData(userUid, userName, userEmail, userImage, userArea)
+                UserModel.userUpload(userData)
+
+                updateUI(user)
+            }
+        }
     }
     // homeFragment에서 updateUi메서드 작동하게 이전
     private fun updateUI(user: FirebaseUser?) {

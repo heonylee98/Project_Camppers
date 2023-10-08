@@ -1,5 +1,9 @@
 package com.heonylee98.camppers.model
 
+import android.os.health.UidHealthStats
+import android.util.Log
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.heonylee98.camppers.data.UserData
@@ -11,6 +15,12 @@ class UserModel {
             val db = Firebase.firestore
             db.collection("userData").document(user.userUid)
                 .set(user)
+        }
+        fun foundUser(userUid: String?, callback: (Task<QuerySnapshot>) -> Unit) {
+            val db = Firebase.firestore
+            db.collection("userData")
+                .get()
+                .addOnCompleteListener(callback)
         }
 
         // user image, area 수정용 메서드
