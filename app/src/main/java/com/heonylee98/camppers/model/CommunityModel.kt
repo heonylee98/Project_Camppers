@@ -18,9 +18,9 @@ class CommunityModel {
             val db = Firebase.firestore
             db.collection("communityPost")
                 .add(post)
-                .addOnSuccessListener { documentReference ->
+                .addOnCompleteListener {
                     // documentId로 postUploadId 교체
-                    val docId = documentReference.id
+                    val docId = it.result.id
                     db.collection("communityPost").document(docId)
                         .update("postUploadId", docId)
                 }

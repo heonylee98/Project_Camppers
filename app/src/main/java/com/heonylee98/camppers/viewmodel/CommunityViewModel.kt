@@ -1,10 +1,12 @@
 package com.heonylee98.camppers.viewmodel
 
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.heonylee98.camppers.MainActivity
 import com.heonylee98.camppers.data.CommunityData
+import com.heonylee98.camppers.data.UserData
 import com.heonylee98.camppers.model.CommunityModel
 
 class CommunityViewModel: ViewModel() {
@@ -21,6 +23,7 @@ class CommunityViewModel: ViewModel() {
             for (doc in it.result.documents) {
                 val id = doc.id
                 val userId = doc.data?.get("postUploadUserId").toString()
+                val userImage = doc.data?.get("postUploadUserImage").toString()
                 val time = doc.data?.get("postUploadTime").toString()
                 val image = doc.data?.get("postUploadImage").toString()
                 val text = doc.data?.get("postUploadText").toString()
@@ -28,7 +31,7 @@ class CommunityViewModel: ViewModel() {
                 val likeCount = doc.data?.get("postUploadLikeCount") as Long
                 val comment = doc.data?.get("postUploadComment") as Long
 
-                val communityGetPostData = CommunityData(id, userId, time, image,
+                val communityGetPostData = CommunityData(id, userId, userImage, time, image,
                     text, like, likeCount, comment)
 
                 dataList.add(communityGetPostData)
@@ -47,6 +50,7 @@ class CommunityViewModel: ViewModel() {
                 for (doc in it.result.documents) {
                     val id = doc.id
                     val userId = doc.data?.get("postUploadUserId").toString()
+                    val userImage = doc.data?.get("postUploadUserImage").toString()
                     val time = doc.data?.get("postUploadTime").toString()
                     val image = doc.data?.get("postUploadImage").toString()
                     val text = doc.data?.get("postUploadText").toString()
@@ -54,7 +58,7 @@ class CommunityViewModel: ViewModel() {
                     val likeCount = doc.data?.get("postUploadLikeCount") as Long
                     val comment = doc.data?.get("postUploadComment") as Long
 
-                    val communityGetPostData = CommunityData(id, userId, time, image,
+                    val communityGetPostData = CommunityData(id, userId, userImage, time, image,
                         text, like, likeCount, comment)
 
                     dataList.add(communityGetPostData)

@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.heonylee98.camppers.MainActivity
 import com.heonylee98.camppers.R
 import com.heonylee98.camppers.databinding.CommunityRecyclerRowBinding
@@ -110,6 +111,10 @@ class CommunityFragment : Fragment() {
             return communityViewModel.communityList.value?.size!!
         }
         override fun onBindViewHolder(holder: CommunityHolder, position: Int) {
+            holder.userNickname.text = communityViewModel.communityList.value?.get(position)?.postUploadUserId
+            Glide.with(this@CommunityFragment)
+                .load(communityViewModel.communityList.value?.get(position)?.postUploadUserImage)
+                .into(holder.userImage)
             holder.postUploadDate.text = communityViewModel.communityList.value?.get(position)?.postUploadTime
             holder.postText.text = communityViewModel.communityList.value?.get(position)?.postUploadText
             holder.postLikeCount.text = "좋아요 ${communityViewModel.communityList.value?.get(position)?.postUploadLikeCount}개"
