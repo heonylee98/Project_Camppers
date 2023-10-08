@@ -131,6 +131,8 @@ class UserLoginFragment : Fragment() {
     private fun updateUI(user: FirebaseUser?) {
         // uid와 일치하는 닉네임 정보 firestore db에서 받아서 보여주는 메서드 필요
         Snackbar.make(requireView(), "${user?.displayName}님 환영합니다.", Snackbar.LENGTH_SHORT).show()
+
+        // login navigation graph에서 pop up 설정을 자기 자신으로 지정해 백버튼을 누르면 loginFragment가 아닌 앱 종료될 수 있도록 설정
         navController.navigate(R.id.action_userLoginFragment_to_mainFragment2)
     }
 

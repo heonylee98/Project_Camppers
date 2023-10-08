@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -21,6 +24,7 @@ import com.heonylee98.camppers.databinding.FragmentMypageBinding
 class MypageFragment : Fragment() {
     lateinit var fragmetMypageBinding: FragmentMypageBinding
     lateinit var navController: NavController
+    lateinit var mainActivity: MainActivity
 
     private lateinit var auth: FirebaseAuth
     private lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -31,6 +35,7 @@ class MypageFragment : Fragment() {
     ): View? {
         fragmetMypageBinding = FragmentMypageBinding.inflate(layoutInflater)
         navController = findNavController()
+        mainActivity = activity as MainActivity
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.client_id))
@@ -55,8 +60,12 @@ class MypageFragment : Fragment() {
             Snackbar.make(requireView(), "로그아웃 완료.", Snackbar.LENGTH_SHORT).show()
 
             // 아래 코드 실행 시 기존 navController에서 벗어나지않아 bottom navigation도 동시에 보이게됨 사용x
-            // navController 자체를 login navigation으로 변경할 방법 찾기
-            // navController.navigate(R.id.fragment_navigation_graph_xml)
+            // navController 자체를 login navigation으로 변경할 방법 찾기 - 해결
+
+            // mainActivity의 navController를 불러와 login navigation이 들어있는 view인 fcvMain을 호출
+            // fcvMain 제어를 통해서 backStack 전부 제거 후 loginFragment로 탐색
+            mainActivity.findNavController(R.id.fcvMain).popBackStack(R.id.mainFragment, true)
+            mainActivity.findNavController(R.id.fcvMain).navigate(R.id.userLoginFragment)
         }
     }
 
