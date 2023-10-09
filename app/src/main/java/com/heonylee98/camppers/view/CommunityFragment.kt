@@ -88,7 +88,7 @@ class CommunityFragment : Fragment() {
                 likeButton = communityRecyclerRowBinding.recyclerLike
                 likeButton.setOnCheckedChangeListener { compoundButton, b ->
                     communityViewModel.likeButtonCount(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
-                    Log.d("!!","${communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!}")
+                    communityViewModel.likeButtonToggle("tester_id2", communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, false)
                 }
                 commentButton = communityRecyclerRowBinding.recyclerComment
                 shareButton = communityRecyclerRowBinding.recyclerShare

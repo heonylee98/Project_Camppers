@@ -7,9 +7,11 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.heonylee98.camppers.data.CommunityData
+import kotlinx.coroutines.flow.merge
 
 class CommunityModel {
     companion object {
@@ -25,12 +27,32 @@ class CommunityModel {
                         .update("postUploadId", docId)
                 }
         }
-        fun communityLikeOn(postId: String, callback: (Task<Void>) -> Unit) {
+        fun communityLikeUp(postId: String, callback: (Task<Void>) -> Unit) {
             val db = Firebase.firestore
             db.collection("communityPost").document(postId)
                 // user 많아지면 초당 1회 이상 like button 활용을 위해 분산 카운터 활용하기
                 .update("postUploadLikeCount", FieldValue.increment(1))
                 .addOnCompleteListener(callback)
+        }
+        fun communityLikeDown(postId: String, callback: (Task<Void>) -> Unit) {
+            val db = Firebase.firestore
+            db.collection("communityPost").document(postId)
+                // user 많아지면 초당 1회 이상 like button 활용을 위해 분산 카운터 활용하기
+                .update("postUploadLikeCount", FieldValue.increment(-1))
+                .addOnCompleteListener(callback)
+        }
+        fun communityLikeToggle(userUid: String, postId: String, toggle: Boolean, callback: (Task<Void>) -> Unit) {
+            val db = Firebase.firestore
+            db.collection("communityPost").document(postId)
+                .update("postUploadLike", mapOf(Pair(userUid, toggle)))
+                .addOnCompleteListener(callback)
+        }
+        fun communityLikeToggle2(userUid: String, postId: String, toggle: Boolean, callback: (Task<Void>) -> Unit) {
+            val db = Firebase.firestore
+            val likeInfo = mapOf(
+                userUid to toggle
+            )
+            db.collection("communityPost").document(postId).set(likeInfo, SetOptions.merge())
         }
 
         // community post get model 메서드
