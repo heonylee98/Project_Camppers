@@ -49,7 +49,9 @@ class CommunityAddFragment : Fragment() {
         val uploadTime = getPostTime()
         val uploadImage = "test_image"
         val uploadText = fragmentCommunityAddBinding.tiedtAddPost.text.toString()
-        val uploadLike = false
+
+        // 좋아요 초기 값 null 처리
+        val uploadLike = null
         val uploadLikeCount = 0
         val uploadComment = 0
 

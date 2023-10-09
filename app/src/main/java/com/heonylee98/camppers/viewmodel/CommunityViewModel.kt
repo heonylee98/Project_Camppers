@@ -27,7 +27,13 @@ class CommunityViewModel: ViewModel() {
                 val time = doc.data?.get("postUploadTime").toString()
                 val image = doc.data?.get("postUploadImage").toString()
                 val text = doc.data?.get("postUploadText").toString()
-                val like = doc.data?.get("postUploadLike").toString().toBoolean()
+
+                // null일 경우에 못받아와서 non-null 처리 필요
+                val like = if (doc.data?.get("postUploadLike") != null) {
+                    doc.data?.get("postUploadLike") as Map<String, Boolean>
+                } else {
+                    null
+                }
                 val likeCount = doc.data?.get("postUploadLikeCount") as Long
                 val comment = doc.data?.get("postUploadComment") as Long
 
@@ -54,7 +60,13 @@ class CommunityViewModel: ViewModel() {
                     val time = doc.data?.get("postUploadTime").toString()
                     val image = doc.data?.get("postUploadImage").toString()
                     val text = doc.data?.get("postUploadText").toString()
-                    val like = doc.data?.get("postUploadLike").toString().toBoolean()
+
+                    // null일 경우에 못받아와서 non-null 처리 필요
+                    val like = if (doc.data?.get("postUploadLike") != null) {
+                        doc.data?.get("postUploadLike") as Map<String, Boolean>
+                    } else {
+                        null
+                    }
                     val likeCount = doc.data?.get("postUploadLikeCount") as Long
                     val comment = doc.data?.get("postUploadComment") as Long
 
