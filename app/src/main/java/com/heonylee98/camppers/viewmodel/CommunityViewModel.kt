@@ -22,7 +22,6 @@ class CommunityViewModel: ViewModel() {
         CommunityModel.getBooleanOnPost(userUid, postId) {
             likeBoolean.value = it.result.data?.get(userUid) as Boolean
         }
-        Log.d("!!", "${likeBoolean.value}")
     }
 
     fun getCommunityData() {
@@ -89,11 +88,12 @@ class CommunityViewModel: ViewModel() {
         }
     }
 
+    // like count up 메서드
     fun likeButtonCount1(postId: String) {
         val dataList = mutableListOf<CommunityData>()
 
         // like button을 누르면 communityLikeOn 메서드로 인해 LikeCount가 올라가게되고 리스트를 갱신하면 communityFragment의 observer가 확인할 수 있도록 적용
-        CommunityModel.communityLikeUp(postId) {
+        CommunityModel.communityLikeDown(postId) {
             CommunityModel.communityGetPost {
                 for (doc in it.result.documents) {
                     val id = doc.id
@@ -123,11 +123,12 @@ class CommunityViewModel: ViewModel() {
         }
     }
 
+    // like count down 메서드
     fun likeButtonCount2(postId: String) {
         val dataList = mutableListOf<CommunityData>()
 
         // like button을 누르면 communityLikeOn 메서드로 인해 LikeCount가 올라가게되고 리스트를 갱신하면 communityFragment의 observer가 확인할 수 있도록 적용
-        CommunityModel.communityLikeDown(postId) {
+        CommunityModel.communityLikeUp(postId) {
             CommunityModel.communityGetPost {
                 for (doc in it.result.documents) {
                     val id = doc.id

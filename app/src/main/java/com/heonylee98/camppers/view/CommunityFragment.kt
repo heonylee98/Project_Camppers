@@ -100,11 +100,10 @@ class CommunityFragment : Fragment() {
                     if (communityViewModel.likeBoolean.value?.equals(true)!!) {
                         communityViewModel.likeButtonCount1(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
                         communityViewModel.likeButtonToggle(currentUser?.uid!!, communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, false)
-                        Log.d("!!", "tt")
-                    } else if (communityViewModel.likeBoolean.value?.equals(false)!!){
+                    }
+                    else if (communityViewModel.likeBoolean.value?.equals(false)!!){
                         communityViewModel.likeButtonCount2(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
                         communityViewModel.likeButtonToggle(currentUser?.uid!!, communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, true)
-                        Log.d("!!", "ff")
                     }
                 }
                 commentButton = communityRecyclerRowBinding.recyclerComment
