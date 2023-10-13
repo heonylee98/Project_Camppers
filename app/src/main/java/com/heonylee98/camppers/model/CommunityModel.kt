@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.SetOptions
@@ -59,6 +60,14 @@ class CommunityModel {
         fun communityGetPost(callback: (Task<QuerySnapshot>) -> Unit) {
             val db = Firebase.firestore
             db.collection("communityPost").orderBy("postUploadTime")
+                .get()
+                .addOnCompleteListener(callback)
+        }
+
+        // community post document에서 userUid에 따른 boolean 파악하는 메서드
+        fun getBooleanOnPost(userUid: String, postId: String, callback: (Task<DocumentSnapshot>) -> Unit) {
+            val db = Firebase.firestore
+            db.collection("communityPost").document(postId)
                 .get()
                 .addOnCompleteListener(callback)
         }

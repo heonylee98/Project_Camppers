@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.heonylee98.camppers.MainActivity
 import com.heonylee98.camppers.R
 import com.heonylee98.camppers.databinding.CommunityRecyclerRowBinding
@@ -29,6 +30,8 @@ class CommunityFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var communityViewModel: CommunityViewModel
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,6 +40,8 @@ class CommunityFragment : Fragment() {
         mainActivity = activity as MainActivity
         navController = findNavController()
         communityViewModel = ViewModelProvider(mainActivity)[CommunityViewModel::class.java]
+
+        auth = FirebaseAuth.getInstance()
 
         communityViewModel.run {
             communityList.observe(mainActivity) {
@@ -65,6 +70,7 @@ class CommunityFragment : Fragment() {
     }
 
     inner class CommunityAdapter: RecyclerView.Adapter<CommunityAdapter.CommunityHolder>() {
+        val currentUser = auth.currentUser
         inner class CommunityHolder(communityRecyclerRowBinding: CommunityRecyclerRowBinding): RecyclerView.ViewHolder(communityRecyclerRowBinding.root) {
             var userImage: ImageView
             var userNickname: TextView
@@ -87,8 +93,19 @@ class CommunityFragment : Fragment() {
 
                 likeButton = communityRecyclerRowBinding.recyclerLike
                 likeButton.setOnCheckedChangeListener { compoundButton, b ->
-                    communityViewModel.likeButtonCount(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
-                    communityViewModel.likeButtonToggle("tester_id2", communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, false)
+
+                    communityViewModel.getBooleanOnPost(currentUser?.uid!!, communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
+
+                    // likeBoolean.value 값을 getBooleanOnPost메서드를 통해 누를 때마다 변화 시켜 observer를 통해 가져와 equals메서드를 통해 값을 분기한 후에 like 갯수 처리와 사용자 toggle 판단
+                    if (communityViewModel.likeBoolean.value?.equals(true)!!) {
+                        communityViewModel.likeButtonCount1(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
+                        communityViewModel.likeButtonToggle(currentUser?.uid!!, communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, false)
+                        Log.d("!!", "tt")
+                    } else if (communityViewModel.likeBoolean.value?.equals(false)!!){
+                        communityViewModel.likeButtonCount2(communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!)
+                        communityViewModel.likeButtonToggle(currentUser?.uid!!, communityViewModel.communityList.value?.get(adapterPosition)?.postUploadId!!, true)
+                        Log.d("!!", "ff")
+                    }
                 }
                 commentButton = communityRecyclerRowBinding.recyclerComment
                 shareButton = communityRecyclerRowBinding.recyclerShare
