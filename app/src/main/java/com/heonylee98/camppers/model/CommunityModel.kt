@@ -53,7 +53,8 @@ class CommunityModel {
             val likeInfo = mapOf(
                 userUid to toggle
             )
-            db.collection("communityPost").document(postId).set(likeInfo, SetOptions.merge())
+            db.collection("communityPost").document(postId)
+                .set(likeInfo, SetOptions.merge())
         }
 
         // community post get model 메서드
